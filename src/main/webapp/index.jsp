@@ -1,5 +1,5 @@
 <html>
-<body>
-<h2>Hello DevOps World!</h2>
+<body bgcolor="#DD7711">
+<h1>Hello DevOps World!</h1>
 </body>
 </html>
