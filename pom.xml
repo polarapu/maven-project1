@@ -16,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>devops</finalName>
+    <finalName>batch55</finalName>
   </build>
 </project>
