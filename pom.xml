@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>testproject</groupId>
   <artifactId>ProjectWeb</artifactId>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>ProjectWeb Maven Webapp</name>
   <url>http://maven.apache.org</url>
