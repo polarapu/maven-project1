@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM centos
 MAINTAINER devops2018 <devopstraining2015@gmail.com>
 #RUN apt-get update -y
 #RUN git config --global user.name "DevOps Training"
