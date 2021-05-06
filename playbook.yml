@@ -1,5 +1,5 @@
 ---
-- hosts:  192.168.176.133
+- hosts: all
   become: yes
   tasks:
   - name: Installing Git Package
