@@ -13,7 +13,7 @@ node {
         withEnv(["M2_HOME=$mvnHome"]) {
           //  if (isUnix()) {
               sh '"$M2_HOME/bin/mvn" -Dmaven.test.failure.ignore clean package'
-         //   } else {
+          } else {
        // bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean package/)
             }
         }
