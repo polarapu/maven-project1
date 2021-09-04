@@ -16,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>devops69.war</finalName>
+    <finalName>devops69</finalName>
   </build>
 </project>
