@@ -1,4 +1,4 @@
-FROM centos
+FROM ubuntu
 MAINTAINER devops2018 <devopstraining2015@gmail.com>
 #RUN apt-get update -y
 RUN touch /opt/file1
