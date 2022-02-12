@@ -2,7 +2,7 @@ FROM ubuntu
 MAINTAINER devops2018 <devopstraining2015@gmail.com>
 RUN apt-get update -y
 RUN touch /opt/file1
-RUN yum install git -y
+apt-get install git -y
 RUN git config --global user.name "DevOps Training"
 RUN git config --global user.email "polarapuprasad@gmail.com"
 RUN cd /opt && git clone https://github.com/polarapu/batch68.git
