@@ -32,7 +32,7 @@ height:400px;
 <div class="imgcontainer ">
 <img src="https://transit.avivaromm.com/wp-content/uploads/2017/10/coursesbackground-1-1480x586.png" width="1300" height="550">
 <div class="container">
-<h1>WELCOME TO DEVOPS TRAINING</h1>
+<h1>WELCOME TO DEVOPS TRAINING!</h1>
 
 <br>
 <h2>Contact us:-</h2>
