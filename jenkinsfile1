@@ -11,7 +11,7 @@ pipeline {
         stage('Test-Stage') {
             steps {
                 echo 'Hello Test Env'
-                build quietPeriod: 3, job: 'Job22'
+                build quietPeriod: 3, job: 'Job2'
             }
         }
         stage('Prod-Stage') {
