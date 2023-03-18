@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Installing HTTPD Package
+    yum: name=httpd state=latest
+  - name: Starting HTTPD services
+    service: name=httpd state=started
+ 
