@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Non-Prod') {
+            steps {
+                echo 'Hello Non-Prod Stage'
+                git branch: 'main', credentialsId: '444816bc-d05a-4ff8-b1a4-f16d2bc56759', url: 'https://github.com/polarapu/batch85.1.git'
+            }
+        }
+        stage('Prod') {
+            steps {
+                echo 'Hello Prod Stage'
+                git branch: 'main', credentialsId: '444816bc-d05a-4ff8-b1a4-f16d2bc56759', url: 'https://github.com/polarapu/batch90.git'
+            }
+        }
+    }
+}
