@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Dev') {
+            steps {
+                echo 'Hello-Dev-Stage'
+                git credentialsId: 'e8694587-b181-42cf-b7ba-c6249eaf0e91', url: 'https://github.com/jayachandra199/maven-project1.git'
+                build 'tomcat-docker'
+                deploy adapters: [tomcat9(credentialsId: '06dbb4c1-d843-415c-a35b-846beffe6b3c', path: '', url: 'http://192.168.220.139:8082')], contextPath: 'devops92.war', war: '**/*.war '
+            
+                
+            }
+        }
+    
+    }
+
