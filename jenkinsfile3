@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+    environment {
+        PATH= "/opt/Maven/apache-maven-3.9.1/bin:$PATH"
+    }
+
+    stages {
+        stage('Sample-Project') {
+            steps {
+                echo 'Started Sample-Project'
+            }
+        }
+        stage('clone') {
+            steps {
+                git repo steps'
+            }
+        }
+        stage('build') {
+            steps {
+                sh "mvn clean install"
+            }
+        }
+        stage('deploy') {
+            steps {
+                deployment step
+            }
+        }
+        stage('Sir') {
+            steps {
+                echo 'Thank you Jenkins Pipeline'
+            }
+        }
+
+    }
+}
