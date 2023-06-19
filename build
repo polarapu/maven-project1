@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Dev') {
+            steps {
+                echo 'Hello-Dev-Stage'
+                build quietPeriod: 5, job: 'maheshjob'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Hello Test-stage'
+                build quietPeriod: 5, job: 'tomcat-container'
+            }
+        }
+       
+    }
+}
