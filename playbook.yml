@@ -2,6 +2,6 @@
 - hosts: all
   become: yes
   tasks:
-   - name: Installing Git Package
-     yum: name= git state= present
+  - name: Installing Git Package
+      yum: name= git state= present
 #ansible all -m yum -b -a "name=git state=latest"
