@@ -12,4 +12,6 @@
   become: yes
   tasks:
   - name: Installing git 
-    yum: name: git state: present
+    yum: 
+       name: git 
+       state: present
