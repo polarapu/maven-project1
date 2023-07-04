@@ -1,0 +1,13 @@
+<pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+
+<profile>
+<id>sonar</id>
+<activation>
+<activeByDefault>true</activeByDefault>
+</activation>
+<properties>
+<sonar.host.url> http://localhost:9000/ </sonar.host.url>
+<sonar.login>admin</sonar.login>
+<sonar.password>admin123</sonar.password>
+</properties>
+</profile>
