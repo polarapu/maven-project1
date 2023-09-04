@@ -5,19 +5,19 @@ pipeline {
         stage('Dev-Stage') {
             steps {
                 echo 'Hello Dev-Stage'
-                build quietPeriod: 3, job: 'Job1'
+                build quietPeriod: 3, job: 'Test1'
             }
         }
         stage('Test-Stage') {
             steps {
                 echo 'Hello Test Env'
-                build quietPeriod: 3, job: 'Job2'
+                build quietPeriod: 3, job: 'Test2'
             }
         }
         stage('Prod-Stage') {
             steps {
                 echo 'Hello Prod Env'
-                build quietPeriod: 3, job: 'Job3'
+                build quietPeriod: 3, job: 'Test3'
             }
         }
     }
