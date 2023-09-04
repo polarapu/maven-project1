@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    tools { 
+        maven 'Maven'  
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                build quietPeriod: 5, job: 'Test1'
+                git credentialsId: 'fe543ee1-981a-4f49-a452-48ec7bc8d77e', url: 'https://github.com/polarapu/maven-project1.git'
+                }
+        }
+        stage('DevOps') {
+            steps {
+                echo 'Hello DevOps'
+                build quietPeriod: 5, job: 'Test2'
+                sh 'mvn clean install'
+            }
+        }
+    }
+}
