@@ -4,7 +4,7 @@
   <groupId>testproject</groupId>
   <artifactId>ProjectWeb</artifactId>
   <packaging>war</packaging>
-  <version>95.0</version>
+  <version>96.0</version>
   <name>ProjectWeb Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -16,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>devops95</finalName>
+    <finalName>devops96</finalName>
   </build>
 </project>
