@@ -20,8 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Hello Deploy'
-                deploy adapters: [tomcat9(credentialsId: '00749868-7156-496f-b456-2f90ceef172b', path: '', url: 'http://192.168.202.154:8082/'), tomcat9(credentialsId: '00749868-7156-496f-b456-2f90ceef172b', path: '', url: 'http://192.168.202.154:8081/'), tomcat9(credentialsId: '00749868-7156-496f-b456-2f90ceef172b', path: '', url: 'http://3.109.121.30:8080/')], contextPath: 'devops95.war', war: '**/*.war'
-            }
+                deploy adapters: [tomcat9(credentialsId: '4f12d7ad-9864-4d8b-89a1-09e4dd744f9a', path: '', url: 'http://192.168.202.155:8082/'), tomcat9(credentialsId: '4f12d7ad-9864-4d8b-89a1-09e4dd744f9a', path: '', url: 'http://192.168.202.155:8081/'), tomcat9(credentialsId: '4f12d7ad-9864-4d8b-89a1-09e4dd744f9a', path: '', url: 'http://3.88.28.25:8080/')], contextPath: 'devops96.war', war: '**/*.war'            }
         }
     }
 }
