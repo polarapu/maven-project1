@@ -21,6 +21,7 @@ pipeline {
             steps {
                 echo 'Hello Deploy'
                 deploy adapters: [tomcat9(credentialsId: 'feefcc5b-d27f-4ec4-bb95-fc84bf79372c', path: '', url: 'http://192.168.202.157:8082/'), tomcat9(credentialsId: 'feefcc5b-d27f-4ec4-bb95-fc84bf79372c', path: '', url: 'http://192.168.202.157:8081/'), tomcat9(credentialsId: 'feefcc5b-d27f-4ec4-bb95-fc84bf79372c', path: '', url: 'http://3.7.65.190:8080/')], contextPath: 'devops97.war', war: '**/*.war'
+            }
         }
-    }
+}
 }
