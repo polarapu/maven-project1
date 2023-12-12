@@ -17,7 +17,7 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Deploy') {
+        stage('DDeploy') {
             steps {
                 echo 'Hello Deploy'
                 deploy adapters: [tomcat9(credentialsId: '4a4e2b63-7676-4f30-9209-444435ed0c90', path: '', url: 'http://192.168.202.158:8081')], contextPath: 'devops98.war', war: '**/*.war' 
