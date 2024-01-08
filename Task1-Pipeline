@@ -17,10 +17,10 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('DDeploy') {
+        stage('Deploy') {
             steps {
                 echo 'Hello Deploy'
-                deploy adapters: [tomcat9(credentialsId: '4a4e2b63-7676-4f30-9209-444435ed0c90', path: '', url: 'http://192.168.202.158:8081')], contextPath: 'devops98.war', war: '**/*.war' 
+                deploy adapters: [tomcat9(credentialsId: '670b6d31-4f2d-4928-9b04-408f11cda943', path: '', url: 'http://192.168.202.159:8083/'), tomcat9(credentialsId: '670b6d31-4f2d-4928-9b04-408f11cda943', path: '', url: 'http://192.168.202.159:8081/'), tomcat9(credentialsId: '670b6d31-4f2d-4928-9b04-408f11cda943', path: '', url: 'http://43.204.219.155:8080/')], contextPath: 'devops99.war', war: '**/*.war' 
                   }
         }
 }
