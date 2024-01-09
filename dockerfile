@@ -1,6 +1,5 @@
-FROM ubuntu
+FROM centos:7.9.2009
 MAINTAINER devops2018 <devopstraining2015@gmail.com>
-RUN apt-get update -y
 RUN touch /opt/file1
 #RUN apt-get install git -y
 #RUN git config --global user.name "DevOps Training"
