@@ -9,5 +9,5 @@ RUN yum install java -y
 #RUN yum install maven -y
 RUN yum install wget -y
 RUN mkdir /opt/tomcat
-RUN cd /opt/tomcat && wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz
+RUN cd /opt/tomcat && wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.17/bin/apache-tomcat-10.1.17.tar.gz --no-check-certificate
 RUN cd /opt/tomcat && tar -xvf apache-tomcat-10.1.17.tar.gz
