@@ -1,7 +1,8 @@
 pipeline {
     agent any
-    environment {
-        PATH= "/opt/Maven/apache-maven-3.9.1/bin:$PATH"
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "Maven"
     }
 
     stages {
@@ -12,7 +13,7 @@ pipeline {
         }
         stage('clone') {
             steps {
-                git repo steps'
+                git credentialsId: 'c2b23aa5-8fe6-4445-b979-9d13c1481ed8', url: 'https://github.com/polarapu/maven-project1.git'
             }
         }
         stage('build') {
@@ -25,7 +26,7 @@ pipeline {
                 deployment step
             }
         }
-        stage('Sir') {
+        stage('Thanks') {
             steps {
                 echo 'Thank you Jenkins Pipeline'
             }
