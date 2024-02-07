@@ -6,31 +6,25 @@ pipeline {
     }
 
     stages {
-        stage('Sample-Project') {
+        stage('Sample-Mini-Project') {
             steps {
                 echo 'Started Sample-Project'
             }
         }
-        stage('clone') {
+        stage('SCM-clone') {
             steps {
                 git credentialsId: 'c2b23aa5-8fe6-4445-b979-9d13c1481ed8', url: 'https://github.com/polarapu/maven-project1.git'
             }
         }
-        stage('build') {
+        stage('Mvn-build') {
             steps {
                 sh "mvn clean install"
             }
         }
-        stage('deploy') {
+        stage('Tomcat-deploy') {
             steps {
-                echo 'deployment step'
+                deploy adapters: [tomcat9(credentialsId: '3e25b6ea-a898-4aa5-9af0-fa20aa7a1e43', path: '', url: 'http://192.168.75.128:8081/')], contextPath: 'devops100.war', war: '**/*.war'
             }
         }
-        stage('Thanks') {
-            steps {
-                echo 'Thank you Jenkins Pipeline'
-            }
-        }
-
     }
 }
