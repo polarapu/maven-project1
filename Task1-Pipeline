@@ -9,7 +9,6 @@ pipeline {
             steps {
                 echo 'Hello Clone stage'
                 git credentialsId: '9a192730-1369-4400-a720-08ff575a5a04', url: 'https://github.com/polarapu/maven-project1.git'
-                ls -l
                 }
         }
         stage('Build') {
