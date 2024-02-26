@@ -8,7 +8,8 @@ pipeline {
         stage('SCM') {
             steps {
                 echo 'Hello Clone stage'
-                git credentialsId: 'fe543ee1-981a-4f49-a452-48ec7bc8d77e', url: 'https://github.com/polarapu/maven-project1.git'
+                git credentialsId: '9a192730-1369-4400-a720-08ff575a5a04', url: 'https://github.com/polarapu/maven-project1.git'
+                ls -l
                 }
         }
         stage('Build') {
@@ -20,7 +21,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Hello Deploy'
-                deploy adapters: [tomcat9(credentialsId: '670b6d31-4f2d-4928-9b04-408f11cda943', path: '', url: 'http://192.168.202.159:8083/'), tomcat9(credentialsId: '670b6d31-4f2d-4928-9b04-408f11cda943', path: '', url: 'http://192.168.202.159:8081/'), tomcat9(credentialsId: '670b6d31-4f2d-4928-9b04-408f11cda943', path: '', url: 'http://43.204.219.155:8080/')], contextPath: 'devops99.war', war: '**/*.war' 
+                deploy adapters: [tomcat9(credentialsId: 'ff24cf31-9aac-4db8-99c2-c21f86a799da', path: '', url: 'http://192.168.75.131:8081/')], contextPath: 'devops101.war', war: '**/*.war' 
                   }
         }
 }
