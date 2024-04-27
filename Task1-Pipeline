@@ -9,7 +9,6 @@ pipeline {
             steps {
                 echo 'Hello Clone stage'
                 git credentialsId: 'f98be98b-5660-4459-8ffd-dd54f8c75fa9', url: 'https://github.com/manojchalapaka/maven-project1.git'
-                ll
                 }
         }
         stage('Build') {
