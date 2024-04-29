@@ -8,7 +8,7 @@ pipeline {
         stage('SCM') {
             steps {
                 echo 'Hello Clone stage'
-                git credentialsId: 'f98be98b-5660-4459-8ffd-dd54f8c75fa9', url: 'https://github.com/manojchalapaka/maven-project1.git'
+                git credentialsId: 'd3d8119d-0934-4adf-ad19-6c686b551d40', url: 'https://github.com/manojchalapaka/maven-project1.git'
                 }
         }
         stage('Build') {
@@ -20,7 +20,7 @@ pipeline {
         stage('Dev-Deploy') {
             steps {
                 echo 'Hello Docker Deploy'
-                deploy adapters: [tomcat9(credentialsId: 'b7ac7d33-d731-4729-97c0-9877a0c83c0c', path: '', url: 'http://192.168.145.155:8081/')], contextPath: 'devops101.war', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'c4c5cfe9-431a-4a7b-a67f-f02a1697120e', path: '', url: 'http://192.168.145.157:8081/')], contextPath: 'devops101.war', war: '**/*.war'
                   }
         }
         
