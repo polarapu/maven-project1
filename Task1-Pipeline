@@ -20,19 +20,19 @@ pipeline {
         stage('Dev-Deploy') {
             steps {
                 echo 'Hello Docker Deploy'
-                deploy adapters: [tomcat9(credentialsId: '2acd656d-7727-4699-9c16-a423361dee25', path: '', url: 'http://192.168.75.130:8082/')], contextPath: 'devops103.war', war: '**/*.war' 
+                deploy adapters: [tomcat9(credentialsId: 'a82fe0b3-3697-405d-a3f8-6cb23c5dee11', path: '', url: 'http://192.168.75.133:8082/')], contextPath: 'devops104.war', war: '**/*.war' 
                   }
         }
         stage('NonPrd-Deploy') {
             steps {
                 echo 'Hello Linux Deploy'
-                deploy adapters: [tomcat9(credentialsId: '2acd656d-7727-4699-9c16-a423361dee25', path: '', url: 'http://192.168.75.130:8081/')], contextPath: 'devops103.war', war: '**/*.war' 
+                deploy adapters: [tomcat9(credentialsId: 'a82fe0b3-3697-405d-a3f8-6cb23c5dee11', path: '', url: 'http://192.168.75.133:8081/')], contextPath: 'devops104.war', war: '**/*.war' 
                   }
         }
         stage('Prod-Deploy') {
             steps {
                 echo 'Hello AWS Deploy'
-                deploy adapters: [tomcat9(credentialsId: '2acd656d-7727-4699-9c16-a423361dee25', path: '', url: 'http://3.87.11.93:8080/')], contextPath: 'devops103.war', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'a82fe0b3-3697-405d-a3f8-6cb23c5dee11', path: '', url: 'http://54.172.97.175:8080/')], contextPath: 'devops104.war', war: '**/*.war'
                   }
         }
 }
