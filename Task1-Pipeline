@@ -1,14 +1,14 @@
 pipeline {
     agent any
     tools { 
-        maven 'Maven'  
+        maven 'M2_HOME'  
     }
 
     stages {
         stage('SCM') {
             steps {
                 echo 'Hello Clone stage'
-                git credentialsId: 'a33c51eb-efa9-408d-919f-cafa6a0a4006', url: 'https://github.com/polarapu/maven-project1.git'
+                git credentialsId: '2868c89a-cc58-41c2-b8ef-d1a8b4528c62', url: 'https://github.com/polarapu/maven-project1.git'
                 }
         }
         stage('Build') {
@@ -20,19 +20,7 @@ pipeline {
         stage('Dev-Deploy') {
             steps {
                 echo 'Hello Docker Deploy'
-                deploy adapters: [tomcat9(credentialsId: 'a82fe0b3-3697-405d-a3f8-6cb23c5dee11', path: '', url: 'http://192.168.75.133:8082/')], contextPath: 'devops104.war', war: '**/*.war' 
-                  }
-        }
-        stage('NonPrd-Deploy') {
-            steps {
-                echo 'Hello Linux Deploy'
-                deploy adapters: [tomcat9(credentialsId: 'a82fe0b3-3697-405d-a3f8-6cb23c5dee11', path: '', url: 'http://192.168.75.133:8081/')], contextPath: 'devops104.war', war: '**/*.war' 
-                  }
-        }
-        stage('Prod-Deploy') {
-            steps {
-                echo 'Hello AWS Deploy'
-                deploy adapters: [tomcat9(credentialsId: 'a82fe0b3-3697-405d-a3f8-6cb23c5dee11', path: '', url: 'http://54.172.97.175:8080/')], contextPath: 'devops104.war', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: '357364e7-48b1-4842-9af5-a3f8d8c45194', path: '', url: 'http://192.168.145.163:8085/')], contextPath: 'devops106.war', war: '*/*.war'
                   }
         }
 }
