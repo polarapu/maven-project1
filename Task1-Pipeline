@@ -8,7 +8,7 @@ pipeline {
         stage('SCM') {
             steps {
                 echo 'Hello Clone stage'
-                git credentialsId: '3e81946e-ccc4-40f5-8a54-2357e6d4ba9d', url: 'https://github.com/polarapu/maven-project1.git'
+                git credentialsId: '27441131-c3e5-4f22-9752-82608620c56d', url: 'https://github.com/polarapu/maven-project1.git'
                 }
         }
         stage('Build') {
@@ -20,19 +20,19 @@ pipeline {
         stage('Dev-Deploy') {
             steps {
                 echo 'Hello Docker Deploy'
-                deploy adapters: [tomcat9(credentialsId: '18da8b3f-825b-461f-b9b6-1eceb76d7ceb', path: '', url: 'http://192.168.75.128:8082/')], contextPath: 'devops107.war', war: '**/*.war' 
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'e2d7e76c-0fe7-4b3c-858a-0a7b1e5bfc26', path: '', url: 'http://192.168.32.130:8083/')], contextPath: 'devops110.war', war: '**/*.war' 
                   }
         }
         stage('NonPrd-Deploy') {
             steps {
                 echo 'Hello Linux Deploy'
-                deploy adapters: [tomcat9(credentialsId: '18da8b3f-825b-461f-b9b6-1eceb76d7ceb', path: '', url: 'http://192.168.75.128:8081/')], contextPath: 'devops107.war', war: '**/*.war' 
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'e2d7e76c-0fe7-4b3c-858a-0a7b1e5bfc26', path: '', url: 'http://192.168.32.128:8081')], contextPath: 'devops110.war', war: '**/*.war' 
                   }
         }
         stage('Prod-Deploy') {
             steps {
                 echo 'Hello AWS Deploy'
-                deploy adapters: [tomcat9(credentialsId: '18da8b3f-825b-461f-b9b6-1eceb76d7ceb', path: '', url: 'http://65.2.37.196:8080/')], contextPath: 'devops107.war', war: '**/*.war'
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'e2d7e76c-0fe7-4b3c-858a-0a7b1e5bfc26', path: '', url: 'http://13.233.231.62:8080/')], contextPath: 'devops110.war', war: '**/*.war'
                   }
         }
 }
