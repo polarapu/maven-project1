@@ -1,6 +1,6 @@
 FROM centos:7.9.2009
 MAINTAINER devops2018 <devopstraining2015@gmail.com>
-RUN touch /opt/file1
+RUN touch /opt/file
 #RUN apt-get install git -y
 #RUN git config --global user.name "DevOps Training"
 #RUN git config --global user.email "polarapuprasad@gmail.com"
