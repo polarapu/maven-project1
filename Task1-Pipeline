@@ -8,7 +8,7 @@ pipeline {
         stage('SCM') {
             steps {
                 echo 'Hello Clone stage'
-                git credentialsId: '27441131-c3e5-4f22-9752-82608620c56d', url: 'https://github.com/polarapu/maven-project1.git'
+                git credentialsId: '0e1fcd62-64fb-489a-9431-d4b84fa49e97', url: 'https://github.com/polarapu/maven-project1.git'
                 }
         }
         stage('Build') {
@@ -20,19 +20,19 @@ pipeline {
         stage('Dev-Deploy') {
             steps {
                 echo 'Hello Docker Deploy'
-                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '6c1745bc-6d9b-4728-8fcc-70447d0f5ab6', path: '', url: 'http://192.168.32.128:8082/')], contextPath: 'devops113.war', war: '**/*.war' 
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '9ce9be27-8f55-4265-9ad8-42423632df9f', path: '', url: 'http://192.168.32.128:8082')], contextPath: 'devops114.war', war: '**/*.war' 
                   }
         }
         stage('NonPrd-Deploy') {
             steps {
                 echo 'Hello Linux Deploy'
-                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '6c1745bc-6d9b-4728-8fcc-70447d0f5ab6', path: '', url: 'http://192.168.32.128:8081/')], contextPath: 'devops113.war', war: '**/*.war' 
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '9ce9be27-8f55-4265-9ad8-42423632df9f', path: '', url: 'http://192.168.32.128:8081')], contextPath: 'devops114.war', war: '**/*.war' 
                   }
         }
         stage('Prod-Deploy') {
             steps {
                 echo 'Hello AWS Deploy'
-                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '6c1745bc-6d9b-4728-8fcc-70447d0f5ab6', path: '', url: 'http://65.2.74.184:8080/')], contextPath: 'devops113.war', war: '**/*.war'
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '9ce9be27-8f55-4265-9ad8-42423632df9f', path: '', url: 'http://16.16.65.89:8080/')], contextPath: 'devops114.war', war: '**/*.war'
                   }
         }
 }
