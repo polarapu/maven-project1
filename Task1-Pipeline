@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Hello Build'
-                bat 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
         stage('Dev-Deploy') {
@@ -32,7 +32,7 @@ pipeline {
         stage('Prod-Deploy') {
             steps {
                 echo 'Hello AWS Deploy'
-                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '9ce9be27-8f55-4265-9ad8-42423632df9f', path: '', url: 'http://16.16.65.89:8080/')], contextPath: 'devops114.war', war: '**/*.war'
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '9ce9be27-8f55-4265-9ad8-42423632df9f', path: '', url: 'http://16.16.201.106:8080/')], contextPath: 'devops114.war', war: '**/*.war'
                   }
         }
 }
